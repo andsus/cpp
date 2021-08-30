@@ -19,7 +19,7 @@ TEST_CASE("finds_a_value_in_an_array_with_one_element")
     REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
+
 TEST_CASE("finds_a_value_in_the_middle_of_an_array")
 {
     const std::vector<int> data {1, 3, 4, 6, 8, 9, 11};
@@ -63,7 +63,6 @@ TEST_CASE("finds_a_value_in_an_array_of_odd_length")
 
     REQUIRE(expected == actual);
 }
-
 TEST_CASE("finds_a_value_in_an_array_of_even_length")
 {
     const std::vector<int> data {1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377};
@@ -81,6 +80,7 @@ TEST_CASE("identifies_that_a_value_is_not_included_in_the_array")
     
     REQUIRE_THROWS_AS(binary_search::find(data, 7), std::domain_error);
 }
+
 
 TEST_CASE("a_value_smaller_than_the_arrays_smallest_value_is_not_found")
 {
@@ -109,5 +109,7 @@ TEST_CASE("nothing_is_found_when_the_left_and_right_bounds_cross")
     
     REQUIRE_THROWS_AS(binary_search::find(data, 0), std::domain_error);
 }
+
+#if defined(EXERCISM_RUN_ALL_TESTS)
 
 #endif
